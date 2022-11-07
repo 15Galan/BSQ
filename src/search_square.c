@@ -32,7 +32,7 @@ void	put_orthogonal_limits(int **brd, int x, int y, int max)
 		j = 0;
 		while (j < max)
 		{
-			if (i == x || j == y)
+			if ((i == x || j == y) && !(i == x && j == y))
 				brd[i][j] = 8;
 			j++;
 		}
