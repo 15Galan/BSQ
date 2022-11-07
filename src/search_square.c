@@ -57,12 +57,8 @@ int	can_grow(int **brd, const t_square a, const t_square b)
 void	calculate_square(int **brd, t_square *sqr, t_square now)
 {
 	t_square	*aux;
-	int			i;
-	int			j;
 
 	aux = initialize_square(now.x, now.y);
-	i = aux->x;
-	j = aux->y;
 	while (can_grow(brd, *aux, now))
 	{
 		aux->x++;
