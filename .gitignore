@@ -3,9 +3,13 @@
 .idea
 
 # Recursos
+*.gch
 *.out
 *.o
 
 # Residuos
 .DS_Store
 .swp
+
+# Carpetas
+tests/
