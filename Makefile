@@ -9,6 +9,6 @@ norm:
 	
 test:
 	@clear
-	cc tests/*.c lib/*.h -Wall -Wextra -Werror
+	cc tests/*.c src/*.c lib/*.h -Wall -Wextra -Werror
 	@ ./a.out
 	@rm a.out
