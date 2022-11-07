@@ -1,0 +1,11 @@
+# Configuración
+.vscode
+.idea
+
+# Recursos
+*.out
+*.o
+
+# Residuos
+.DS_Store
+.swp
