@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 12:43:19 by antgalan          #+#    #+#             */
-/*   Updated: 2022/11/07 21:04:32 by antgalan         ###   ########.fr       */
+/*   Updated: 2022/11/07 23:51:34 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	put_orthogonal_limits(int **brd, int x, int y, int max)
 		j = 0;
 		while (j < max)
 		{
-			if ((i == x || j == y) && !(i == x && j == y))
+			if ((i == x || j == y) && !(i == x && j == y) && brd[i][j] != 1)
 				brd[i][j] = 8;
 			j++;
 		}
