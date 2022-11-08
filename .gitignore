@@ -11,4 +11,5 @@ bsq
 # Residuos
 .DS_Store
 .swp
-map
+map*
+test*
