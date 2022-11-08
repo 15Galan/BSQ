@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 12:32:35 by antgalan          #+#    #+#             */
-/*   Updated: 2022/11/08 02:16:25 by antgalan         ###   ########.fr       */
+/*   Updated: 2022/11/08 19:39:27 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,10 +51,10 @@ void		put_orthogonal_limits(int **map, int x, int y, int dim);
  * @brief   Calculates the best solution square.
  * 
  * @param map   Map instance for the problem.
- * @param sqr   Current solution square.
- * @param new   New solution square to compare.
+ * @param sqr   Square to calculate.
+ * @param max   Maximum limit to reach.
  */
-void		calculate_square(int **map, t_square *sqr, t_square new);
+t_square	*calculate_square(int **map, t_square *sqr, int max);
 
 /**
  * @brief	Finds the biggest square on the map.

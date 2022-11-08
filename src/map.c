@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 00:44:51 by antgalan          #+#    #+#             */
-/*   Updated: 2022/11/08 02:16:39 by antgalan         ###   ########.fr       */
+/*   Updated: 2022/11/08 19:37:58 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,20 +80,20 @@ void	put_orthogonal_limits(int **map, int x, int y, int max)
 	}
 }
 
-void	calculate_square(int **map, t_square *sqr, t_square new)
+t_square	*calculate_square(int **map, t_square *sqr, int max)
 {
-	t_square	*aux;
+	int	i;
+	int	j;
 
-	aux = initialize_square(new.x, new.y);
-	while (can_grow(map, *aux, new))
+	i = sqr->x;
+	j = sqr->y;
+	while (can_grow(map, *sqr, max))
 	{
-		aux->x++;
-		aux->y++;
-		aux->d++;
+		i++;
+		j++;
+		sqr->d++;
 	}
-	if (sqr->d < aux->d)
-		sqr = aux;
-	free(aux);
+	return (sqr);
 }
 
 t_square	*find_max_square(int **map, int dim)
@@ -105,20 +105,21 @@ t_square	*find_max_square(int **map, int dim)
 	int			j;
 
 	sol = initialize_square(0, 0);
-	end = initialize_square(dim, dim);
-	i = 0;
-	while (i < end->x && i < dim - sol->d)
+	end = initialize_square(dim - 1, dim - 1);
+	i = -1;
+	while (++i < dim)
 	{
-		j = 0;
-		while (j < end->y && j < dim - sol->d)
+		j = -1;
+		while (++j < dim)
 		{
-			new = initialize_square(i, j);
-			if (map[i][j] == 0)
-				calculate_square(map, sol, *new);
-			free(new);
-			j++;
+			if (map[i][j] != 1)
+			{
+				new = calculate_square(map, initialize_square(i, j), dim - sol->d + 1);
+				if (sol->d < new->d)
+					*sol = *new;
+				free(new);
+			}
 		}
-		i++;
 	}
 	free(end);
 	return (sol);
