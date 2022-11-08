@@ -1,15 +1,19 @@
+COMP = cc
+FLAGS = -Wall -Wextra -Werror
+SRC = ./src
+CFILES = *.c
+LIB = ./lib
+OUTNAME = bsq
+NORM = norminette -R CheckForbiddenSourceHeader 
+
+all: $(files)
+	$(COMP) $(FLAGS) $(SRC)/$(CFILES) -I$(LIB) -o $(OUTNAME)
+
 norm:
 	@clear
 	@echo "- Código fuente -"
-	@norminette -R CheckForbiddenSourceHeader src/*.c
+	@$(NORM) $(SRC)/$(CFILES)
 	@echo ""
 	@echo "- Librerías externas -"
-	@norminette -R CheckForbiddenSourceHeader lib/*.h
+	@$(NORM) $(LIB)/*.h
 	@echo ""
-
-%:
-	@clear
-	@echo "Ejecutando TEST $@:\t$$(basename tests/test_$@.c '.c')\n"
-	@cc tests/test_$@.c src/*.c lib/*.h -Wall -Werror -Wextra -o tests/test_$@.out
-	@./tests/test_$@.out
-	@rm tests/test_$@.out lib/*.gch

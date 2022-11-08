@@ -6,14 +6,14 @@
 /*   By: antgalan <antgalan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 00:42:30 by antgalan          #+#    #+#             */
-/*   Updated: 2022/11/08 16:29:12 by antgalan         ###   ########.fr       */
+/*   Updated: 2022/11/08 21:15:31 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SQUARE_H
 # define SQUARE_H
 
-# include <stdlib.h>
+# include "caption.h"
 
 /**
  * @brief	Represents a square.
@@ -38,7 +38,7 @@ typedef struct s_square
  * 
  * @return	Initilized square.
  */
-t_square	*initialize_square(int x, int y);
+t_square	*init_square(int x, int y);
 
 /**
  * @brief  	Checks if a square can grow
@@ -49,6 +49,6 @@ t_square	*initialize_square(int x, int y);
  * 
  * @return int 	'1' if it can grow; '0' otherwise.
  */
-int			can_grow(int **map, const t_square sqr, int max);
+int			can_grow(int **map, t_square sqr, t_caption max);
 
 #endif

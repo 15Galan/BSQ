@@ -6,14 +6,15 @@
 /*   By: antgalan <antgalan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 12:43:19 by antgalan          #+#    #+#             */
-/*   Updated: 2022/11/08 19:37:56 by antgalan         ###   ########.fr       */
+/*   Updated: 2022/11/08 21:19:12 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../lib/square.h"
-#include "../lib/map.h"
+#include "square.h"
+#include "map.h"
+#include <stdlib.h>
 
-t_square	*initialize_square(int x, int y)
+t_square	*init_square(int x, int y)
 {
 	t_square	*sqr;
 
@@ -24,14 +25,14 @@ t_square	*initialize_square(int x, int y)
 	return (sqr);
 }
 
-int	can_grow(int **map, const t_square sqr, int max)
+int	can_grow(int **map, t_square sqr, t_caption cap)
 {
 	int	i;
 	int	j;
 
 	i = sqr.x + sqr.d;
 	j = sqr.y + sqr.d;
-	if (max < i || max < j)
+	if (cap.num_rows < i || cap.num_columns < j)
 		return (0);
 	while (sqr.x <= i)
 	{
