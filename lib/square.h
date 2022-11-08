@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 00:42:30 by antgalan          #+#    #+#             */
-/*   Updated: 2022/11/08 16:29:12 by antgalan         ###   ########.fr       */
+/*   Updated: 2022/11/08 20:33:26 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ typedef struct s_square
  * 
  * @return	Initilized square.
  */
-t_square	*initialize_square(int x, int y);
+t_square	*init_square(int x, int y);
 
 /**
  * @brief  	Checks if a square can grow

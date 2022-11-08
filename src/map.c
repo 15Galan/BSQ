@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 00:44:51 by antgalan          #+#    #+#             */
-/*   Updated: 2022/11/08 19:37:58 by antgalan         ###   ########.fr       */
+/*   Updated: 2022/11/08 20:34:12 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,8 +104,8 @@ t_square	*find_max_square(int **map, int dim)
 	int			i;
 	int			j;
 
-	sol = initialize_square(0, 0);
-	end = initialize_square(dim - 1, dim - 1);
+	sol = init_square(0, 0);
+	end = init_square(dim - 1, dim - 1);
 	i = -1;
 	while (++i < dim)
 	{
@@ -114,7 +114,7 @@ t_square	*find_max_square(int **map, int dim)
 		{
 			if (map[i][j] != 1)
 			{
-				new = calculate_square(map, initialize_square(i, j), dim - sol->d + 1);
+				new = calculate_square(map, init_square(i, j), dim - sol->d + 1);
 				if (sol->d < new->d)
 					*sol = *new;
 				free(new);
