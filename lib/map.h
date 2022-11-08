@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   search_square.h                                    :+:      :+:    :+:   */
+/*   map.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antgalan <antgalan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 12:32:35 by antgalan          #+#    #+#             */
-/*   Updated: 2022/11/08 00:36:36 by antgalan         ###   ########.fr       */
+/*   Updated: 2022/11/08 01:45:37 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SEARCH_SQUARE_H
-# define SEARCH_SQUARE_H
+#ifndef MAP_H
+# define MAP_H
 
+# include "square.h"
 # include <unistd.h>
 # include <stdlib.h>
 
 /**
- * @brief	Represents a square.
+ * @brief	Prints a map pre-formated with the caption characters.
  * 
- * @param x		Origin's horizontal coordinate.
- * @param y		Origin's vertical coordinate.
- * @param d		Length of the square's diagonal.
+ * @param map   Map state to print.
+ * @param dim   Map's dimension.
  */
-typedef struct s_square
-{
-	int	x;
-	int	y;
-	int	d;
-}	t_square;
+void		print_map_cheat(int **map, int dim);
 
 /**
  * @brief   Places an '8' on the board for each position
@@ -40,18 +35,6 @@ typedef struct s_square
  * @param dim   Map dimension.
  */
 void		put_orthogonal_limits(int **map, int x, int y, int dim);
-
-/**
- * @brief  	Checks if a solution square can
- * 			grow, being a better solution.
- * 
- * @param map	Map instance to check.
- * @param a 	Current solution square.
- * @param b 	New solution square.
- * 
- * @return int 	'1' if it can grow; '0' otherwise.
- */
-int			can_grow(int **map, const t_square a, const t_square b);
 
 /**
  * @brief   Calculates the best solution square.
@@ -67,6 +50,8 @@ void		calculate_square(int **map, t_square *sqr, t_square new);
  * 
  * @param map	Map instance for the problem.
  * @param dim	Map dimension.
+ * 
+ * @return  Biggest square on the map.
  */
 t_square	*find_max_square(int **map, int dim);
 
