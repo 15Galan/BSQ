@@ -39,7 +39,6 @@ void	print_map_cheat(int **map, int dim)
 
 void	print_solution(int **map, t_square sol, t_caption cap)
 {
-	char	n;
 	int		i;
 	int		j;
 
@@ -51,13 +50,12 @@ void	print_solution(int **map, t_square sol, t_caption cap)
 		{
 			if (sol.x <= i && i < sol.x + sol.d
 				&& sol.y <= j && j < sol.y + sol.d)
-				n = '0' + cap.full;
+				write(1, &cap.full, 1);
 			else if (map[i][j] == 1)
-				n = '0' + cap.obstacle;
+				write(1, &cap.obstacle, 1);
 			else
-				n = '0' + cap.empty;
+				write(1, &cap.empty, 1);
 			j++;
-			write(1, &n, 1);
 		}
 		write(1, "\n", 1);
 		i++;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   create_map.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ernesmar <ernesmar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: antgalan <antgalan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 15:03:11 by ernesmar          #+#    #+#             */
-/*   Updated: 2022/11/08 16:30:12 by ernesmar         ###   ########.fr       */
+/*   Updated: 2022/11/08 21:33:11 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,9 @@ t_caption	fill_caption(char *raw, int *flag_error)
 	displacement = get_base(atoi(raw));
 	new_caption.num_rows = atoi(raw);
 	new_caption.num_columns = calculate_rows(raw);
-	new_caption.empty = raw[displacement + 1];
-	new_caption.obstacle = raw[displacement + 2];
-	new_caption.full = raw[displacement + 3];
+	new_caption.empty = raw[displacement + 0];
+	new_caption.obstacle = raw[displacement + 1];
+	new_caption.full = raw[displacement + 2];
 	if (raw[displacement + 4] != '\n')
 		*flag_error = 1;
 	else if (ft_is_printable(new_caption.empty) == 0)
