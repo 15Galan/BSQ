@@ -26,4 +26,5 @@ int	ft_atoi(char *str);
  * @return the number of digits n has (ex: 142 is 3)
  */
 int	get_base(int n);
+
 #endif

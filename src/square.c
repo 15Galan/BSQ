@@ -6,12 +6,12 @@
 /*   By: antgalan <antgalan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 12:43:19 by antgalan          #+#    #+#             */
-/*   Updated: 2022/11/08 20:33:15 by antgalan         ###   ########.fr       */
+/*   Updated: 2022/11/08 20:36:49 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../lib/square.h"
-#include "../lib/map.h"
+#include "square.h"
+#include "map.h"
 
 t_square	*init_square(int x, int y)
 {

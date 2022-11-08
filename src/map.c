@@ -6,12 +6,12 @@
 /*   By: antgalan <antgalan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 00:44:51 by antgalan          #+#    #+#             */
-/*   Updated: 2022/11/08 20:34:12 by antgalan         ###   ########.fr       */
+/*   Updated: 2022/11/08 20:37:51 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../lib/square.h"
-#include "../lib/map.h"
+#include "square.h"
+#include "map.h"
 
 void	print_map_cheat(int **map, int dim)
 {
@@ -80,7 +80,7 @@ void	put_orthogonal_limits(int **map, int x, int y, int max)
 	}
 }
 
-t_square	*calculate_square(int **map, t_square *sqr, int max)
+t_square	*update_square(int **map, t_square *sqr, int max)
 {
 	int	i;
 	int	j;
@@ -114,7 +114,7 @@ t_square	*find_max_square(int **map, int dim)
 		{
 			if (map[i][j] != 1)
 			{
-				new = calculate_square(map, init_square(i, j), dim - sol->d + 1);
+				new = update_square(map, init_square(i, j), dim - sol->d + 1);
 				if (sol->d < new->d)
 					*sol = *new;
 				free(new);
