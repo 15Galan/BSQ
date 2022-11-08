@@ -4,6 +4,7 @@ SRC = ./src
 CFILES = *.c
 LIB = ./lib
 OUTNAME = bsq
+NORM = norminette -R CheckForbiddenSourceHeader 
 
 all: $(files)
 	$(COMP) $(FLAGS) $(SRC)/$(CFILES) -I$(LIB) -o $(OUTNAME)
@@ -11,8 +12,8 @@ all: $(files)
 norm:
 	@clear
 	@echo "- Código fuente -"
-	@norminette -R CheckForbiddenSourceHeader src/*.c
+	@$(NORM) $(SRC)/$(CFILES)
 	@echo ""
 	@echo "- Librerías externas -"
-	@norminette -R CheckForbiddenSourceHeader lib/*.h
+	@$(NORM) $(LIB)/*.h
 	@echo ""
