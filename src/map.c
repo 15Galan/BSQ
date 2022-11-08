@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 00:44:51 by antgalan          #+#    #+#             */
-/*   Updated: 2022/11/08 01:08:19 by antgalan         ###   ########.fr       */
+/*   Updated: 2022/11/08 02:16:39 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,32 @@ void	print_map_cheat(int **map, int dim)
 		{
 			n = '0' + map[i][j];
 			write(1, &n, 1);
+			j++;
+		}
+		write(1, "\n", 1);
+		i++;
+	}
+	write(1, "\n", 1);
+}
+
+void	print_solution(int **map, t_square sol, char cap[3], int dim)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (i < dim)
+	{
+		j = 0;
+		while (j < dim)
+		{
+			if (sol.x <= i && i < sol.x + sol.d
+				&& sol.y <= j && j < sol.y + sol.d)
+				write(1, &cap[2], 1);
+			else if (map[i][j] == 1)
+				write(1, &cap[1], 1);
+			else
+				write(1, &cap[0], 1);
 			j++;
 		}
 		write(1, "\n", 1);

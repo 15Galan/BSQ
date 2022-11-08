@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 12:32:35 by antgalan          #+#    #+#             */
-/*   Updated: 2022/11/08 01:45:37 by antgalan         ###   ########.fr       */
+/*   Updated: 2022/11/08 02:16:25 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,23 @@
 # include <stdlib.h>
 
 /**
- * @brief	Prints a map pre-formated with the caption characters.
+ * @brief	Prints a map pre-formated without the caption characters.
  * 
  * @param map   Map state to print.
  * @param dim   Map's dimension.
  */
 void		print_map_cheat(int **map, int dim);
+
+/**
+ * @brief   Prints the map with the solution square,
+ *      	using the caption characters.
+ * 
+ * @param map   Map instance for the problem.
+ * @param sol	Solution square.
+ * @param cap   Caption characters.
+ * @param dim	Map dimension.
+ */
+void		print_solution(int **map, t_square sol, char cap[3], int dim);
 
 /**
  * @brief   Places an '8' on the board for each position
