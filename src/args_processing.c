@@ -6,7 +6,7 @@
 /*   By: ernesmar <ernesmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 15:20:09 by ernesmar          #+#    #+#             */
-/*   Updated: 2022/11/08 15:21:45 by ernesmar         ###   ########.fr       */
+/*   Updated: 2022/11/08 23:10:04 by ernesmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,5 +60,5 @@ int	get_base(int n)
 		total *= 10;
 		exponent++;
 	}
-	return (exponent);
+	return (exponent + 1);
 }
