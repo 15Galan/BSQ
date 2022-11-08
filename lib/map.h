@@ -6,16 +6,14 @@
 /*   By: antgalan <antgalan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 12:32:35 by antgalan          #+#    #+#             */
-/*   Updated: 2022/11/08 20:40:30 by antgalan         ###   ########.fr       */
+/*   Updated: 2022/11/08 21:15:35 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MAP_H
 # define MAP_H
 
-# include "square.h"
-# include <unistd.h>
-# include <stdlib.h>
+# include "caption.h"
 
 /**
  * @brief	Prints a map pre-formated without the caption characters.
@@ -31,10 +29,9 @@ void		print_map_cheat(int **map, int dim);
  * 
  * @param map   Map instance for the problem.
  * @param sol	Solution square.
- * @param cap   Caption characters.
- * @param dim	Map dimension.
+ * @param cap   Caption values.
  */
-void		print_solution(int **map, t_square sol, char cap[3], int dim);
+void		print_solution(int **map, t_square sol, t_caption cap);
 
 /**
  * @brief   Places an '8' on the board for each position
@@ -54,7 +51,7 @@ void		put_orthogonal_limits(int **map, int x, int y, int dim);
  * @param sqr   Square to calculate.
  * @param max   Maximum limit to reach.
  */
-t_square	*update_square(int **map, t_square *sqr, int max);
+t_square	*update_square(int **map, t_square *sqr, t_caption cap);
 
 /**
  * @brief	Finds the biggest square on the map.
@@ -64,6 +61,6 @@ t_square	*update_square(int **map, t_square *sqr, int max);
  * 
  * @return  Biggest square on the map.
  */
-t_square	*find_max_square(int **map, int dim);
+t_square	*find_max_square(int **map, t_caption cap);
 
 #endif
