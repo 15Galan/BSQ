@@ -3,6 +3,7 @@
 .idea
 
 # Recursos
+*.dSYM
 *.gch
 *.out
 *.o
