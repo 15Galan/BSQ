@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 12:27:49 by ernesmar          #+#    #+#             */
-/*   Updated: 2022/11/09 01:48:16 by antgalan         ###   ########.fr       */
+/*   Updated: 2022/11/09 09:33:26 by ernesmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,10 @@ typedef struct s_caption
 	char	obst;
 	char	full;
 }	t_caption;
+
+/*
+ * @brief initializes the structure t_caption
+ */
+t_caption	fill_caption(char *raw, int *flag_error);
 
 #endif

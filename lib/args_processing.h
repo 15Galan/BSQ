@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 21:52:06 by ernesmar          #+#    #+#             */
-/*   Updated: 2022/11/09 02:02:55 by antgalan         ###   ########.fr       */
+/*   Updated: 2022/11/09 09:39:39 by ernesmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,12 @@
  * @return  The base number.
  */
 int	get_base(int n);
+
+/*
+ * @param Positive number in string whitout spaces and simbol
+ *
+ * @return Value in Integer
+ */
+int ft_atoi(char *num);
 
 #endif
