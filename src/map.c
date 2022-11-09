@@ -77,10 +77,10 @@ t_square	*find_max_square(int **map, t_caption cap)
 	sol = init_square(0, 0);
 	end = init_square(cap.rows - 1, cap.cols - 1);
 	i = -1;
-	while (++i < cap.rows - 1)
+	while (++i < cap.rows)
 	{
 		j = -1;
-		while (++j < cap.cols - 1)
+		while (++j < cap.cols)
 		{
 			if (map[i][j] != 1)
 			{
