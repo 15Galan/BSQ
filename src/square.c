@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 12:43:19 by antgalan          #+#    #+#             */
-/*   Updated: 2022/11/09 02:30:34 by antgalan         ###   ########.fr       */
+/*   Updated: 2022/11/09 10:34:49 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ t_square	*grow_square(int **map, t_square *sqr, t_caption cap)
 		i++;
 	}
 	sqr->d++;
-	if (sqr->x + sqr->d > cap.rows || sqr->y + sqr->d > cap.cols)
+	if (cap.rows < sqr->x + sqr->d || cap.cols < sqr->y + sqr->d)
 		return (sqr);
 	return (grow_square(map, sqr, cap));
 }

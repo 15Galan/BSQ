@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 00:44:51 by antgalan          #+#    #+#             */
-/*   Updated: 2022/11/09 02:42:56 by antgalan         ###   ########.fr       */
+/*   Updated: 2022/11/09 10:26:06 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,8 @@ void	print_solution(int **map, t_square sol, t_caption cap, char del)
 		j = 0;
 		while (j < cap.cols)
 		{
-			if (sol.x <= i && i < sol.x + sol.d
-				&& sol.y <= j && j < sol.y + sol.d)
+			if (sol.x <= i && i < sol.x + sol.d - 1
+				&& sol.y <= j && j < sol.y + sol.d - 1)
 				ft_putchar(cap.full);
 			else if (map[i][j] == 1)
 				ft_putchar(cap.obst);
