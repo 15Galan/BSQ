@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 08:51:48 by ernesmar          #+#    #+#             */
-/*   Updated: 2022/11/09 13:28:22 by antgalan         ###   ########.fr       */
+/*   Updated: 2022/11/09 13:46:34 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "ft_str.h"
 #include "square.h"
 #include "map.h"
-#include <stdio.h>
+#include <stdlib.h>
 
 int	**create_map_from_file(char *path, t_caption *caption, int *flag_error);
 
@@ -32,21 +32,23 @@ int	main(int argc, char **argv)
 	t_square	*bsq;
 	int			**map;
 	int			flag_error;
+	int			i;
 
-	flag_error = 0;
-	if (argc == 2)
+	i = 1;
+	while (i < argc)
 	{
-		map = create_map_from_file(*(argv + 1), &caption, &flag_error);
+		flag_error = 0;
+		map = create_map_from_file(*(argv + i), &caption, &flag_error);
+		ft_putstr("Mapa:\n");
 		print_map(map, caption, ' ');
-		if (flag_error >= 1)
-			ft_putstr("map error\n");
-		else if (map != NULL)
+		if (map != NULL && flag_error == 0)
 		{
 			bsq = find_max_square(map, caption);
-			if (bsq != NULL)
-				print_solution(map, *bsq, caption, ' ');
-			else
-				ft_putstr("map error\n");
+			ft_putstr("Solución:\n");
+			print_solution(map, *bsq, caption, ' ');
+			free(bsq);
 		}
+		free_map(map, caption.rows);
+		i++;
 	}
 }

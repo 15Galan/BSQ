@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 00:44:51 by antgalan          #+#    #+#             */
-/*   Updated: 2022/11/09 13:19:53 by antgalan         ###   ########.fr       */
+/*   Updated: 2022/11/09 13:34:46 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,4 +90,17 @@ t_square	*find_max_square(int **map, t_caption cap)
 		}
 	}
 	return (sol);
+}
+
+void	free_map(int **map, int rows)
+{
+	int	i;
+
+	i = 0;
+	while (i < rows)
+	{
+		free(map[i]);
+		i++;
+	}
+	free(map);
 }
