@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 12:32:35 by antgalan          #+#    #+#             */
-/*   Updated: 2022/11/09 02:43:10 by antgalan         ###   ########.fr       */
+/*   Updated: 2022/11/09 13:42:08 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,5 +63,13 @@ t_square	*update_square(int **map, t_square *sqr, t_caption cap);
  * @return  Biggest square on the map.
  */
 t_square	*find_max_square(int **map, t_caption cap);
+
+/**
+ * @brief  Frees the memory allocated for the map.
+ * 
+ * @param map   Map instance to free.
+ * @param rws   Map rows number.
+ */
+void		free_map(int **map, int rws);
 
 #endif
