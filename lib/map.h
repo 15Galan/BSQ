@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 12:32:35 by antgalan          #+#    #+#             */
-/*   Updated: 2022/11/08 21:15:35 by antgalan         ###   ########.fr       */
+/*   Updated: 2022/11/09 02:43:10 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,19 +19,20 @@
  * @brief	Prints a map pre-formated without the caption characters.
  * 
  * @param map   Map state to print.
- * @param dim   Map's dimension.
+ * @param cap   Map's caption.
+ * @param del   Delimiter character ('\0' for no delimiter).
  */
-void		print_map_cheat(int **map, int dim);
+void		print_map(int **map, t_caption cap, char del);
 
 /**
  * @brief   Prints the map with the solution square,
  *      	using the caption characters.
  * 
- * @param map   Map instance for the problem.
- * @param sol	Solution square.
- * @param cap   Caption values.
+ * @param map   Map state to print.
+ * @param cap   Map's caption.
+ * @param del   Delimiter character ('\0' for no delimiter).
  */
-void		print_solution(int **map, t_square sol, t_caption cap);
+void		print_solution(int **map, t_square sol, t_caption cap, char del);
 
 /**
  * @brief   Places an '8' on the board for each position

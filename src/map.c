@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 00:44:51 by antgalan          #+#    #+#             */
-/*   Updated: 2022/11/09 02:09:20 by antgalan         ###   ########.fr       */
+/*   Updated: 2022/11/09 02:42:56 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,22 @@
 #include "map.h"
 #include <stdlib.h>
 
-void	print_map_cheat(int **map, int dim)
+void	print_map(int **map, t_caption cap, char del)
 {
-	char	n;
 	int		i;
 	int		j;
 
 	i = 0;
-	while (i < dim)
+	while (i < cap.rows)
 	{
 		j = 0;
-		while (j < dim)
+		while (j < cap.cols)
 		{
-			n = '0' + map[i][j];
-			ft_putchar(n);
-			ft_putchar(' ');
+			if (map[i][j] == 1)
+				ft_putchar(cap.obst);
+			else
+				ft_putchar(cap.empty);
+			ft_putchar(del);
 			j++;
 		}
 		ft_putchar('\n');
@@ -38,7 +39,7 @@ void	print_map_cheat(int **map, int dim)
 	ft_putchar('\n');
 }
 
-void	print_solution(int **map, t_square sol, t_caption cap)
+void	print_solution(int **map, t_square sol, t_caption cap, char del)
 {
 	int	i;
 	int	j;
@@ -56,7 +57,7 @@ void	print_solution(int **map, t_square sol, t_caption cap)
 				ft_putchar(cap.obst);
 			else
 				ft_putchar(cap.empty);
-			ft_putchar(' ');
+			ft_putchar(del);
 			j++;
 		}
 		ft_putchar('\n');
