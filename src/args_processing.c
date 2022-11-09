@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 15:20:09 by ernesmar          #+#    #+#             */
-/*   Updated: 2022/11/09 02:07:53 by antgalan         ###   ########.fr       */
+/*   Updated: 2022/11/09 12:58:30 by ernesmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,11 +54,11 @@ int	get_base(int n)
 	exponent = 0;
 	total = 1;
 	if (n < 10)
-		return (1);
-	while (n > total)
+		return (0);
+	while (n >= total)
 	{
 		total *= 10;
 		exponent++;
 	}
-	return (exponent + 1);
+	return (exponent - 1);
 }

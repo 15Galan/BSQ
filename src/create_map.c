@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 15:03:11 by ernesmar          #+#    #+#             */
-/*   Updated: 2022/11/09 13:41:45 by antgalan         ###   ########.fr       */
+/*   Updated: 2022/11/09 13:33:04 by ernesmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ int	**create_map_from_file(char *path, t_caption *caption, int *flag_error)
 	if (raw == NULL)
 	{
 		free(raw);
-		ft_putstr("File not found \n");
+		ft_putstr("map error\n");
 		return (NULL);
 	}
 	*caption = fill_caption(raw, flag_error);

@@ -7,11 +7,14 @@
 *.gch
 *.out
 *.o
+*.json
 bsq
 
 # Residuos
 .DS_Store
 .swp
+map*
+test*
 
 # Carpetas
 tests/
