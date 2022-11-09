@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 00:44:51 by antgalan          #+#    #+#             */
-/*   Updated: 2022/11/09 10:26:06 by antgalan         ###   ########.fr       */
+/*   Updated: 2022/11/09 12:04:41 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,10 +77,10 @@ t_square	*find_max_square(int **map, t_caption cap)
 	sol = init_square(0, 0);
 	end = init_square(cap.rows - 1, cap.cols - 1);
 	i = -1;
-	while (++i < cap.rows)
+	while (++i < cap.rows - sol->d + 1)
 	{
 		j = -1;
-		while (++j < cap.cols)
+		while (++j < cap.cols - sol->d + 1)
 		{
 			if (map[i][j] != 1)
 			{
