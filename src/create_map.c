@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 15:03:11 by ernesmar          #+#    #+#             */
-/*   Updated: 2022/11/09 09:36:13 by ernesmar         ###   ########.fr       */
+/*   Updated: 2022/11/09 13:41:45 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +63,7 @@ void	fill_map(int **map, t_caption *caption, char *raw, int *flag_error)
 
 // if we cannot access the file, we cannot create a map,
 // so we do not have to free it 
-int	**create_map_from_file(char *path,
-	t_caption *caption, int *flag_error)
+int	**create_map_from_file(char *path, t_caption *caption, int *flag_error)
 {
 	int		**map;
 	char	*raw;

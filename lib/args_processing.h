@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 21:52:06 by ernesmar          #+#    #+#             */
-/*   Updated: 2022/11/09 09:39:39 by ernesmar         ###   ########.fr       */
+/*   Updated: 2022/11/09 13:42:25 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,6 @@ int	get_base(int n);
  *
  * @return Value in Integer
  */
-int ft_atoi(char *num);
+int	ft_atoi(char *num);
 
 #endif
