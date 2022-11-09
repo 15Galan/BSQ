@@ -11,9 +11,11 @@ all: $(files)
 
 norm:
 	@clear
-	@echo "- Código fuente -"
+	@echo " Código fuente"
+	@echo "--------------"
 	@$(NORM) $(SRC)/$(CFILES)
 	@echo ""
-	@echo "- Librerías externas -"
+	@echo " Librerías externas"
+	@echo "-------------------"
 	@$(NORM) $(LIB)/*.h
 	@echo ""

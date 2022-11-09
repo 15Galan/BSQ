@@ -6,7 +6,7 @@
 /*   By: ernesmar <ernesmar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 16:23:29 by ernesmar          #+#    #+#             */
-/*   Updated: 2022/11/08 16:31:01 by ernesmar         ###   ########.fr       */
+/*   Updated: 2022/11/09 09:28:28 by ernesmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,9 @@ char	*read_file(char *path)
 	fd = open(path, O_RDONLY);
 	file_size = calculate_file_size(path);
 	buffer = (char *)malloc(sizeof(char *) * file_size);
-	if (fd == -1)
+	if (fd == -1 || buffer == NULL)
 	{
+		close(fd);
 		return (NULL);
 	}
 	read(fd, buffer, file_size);
