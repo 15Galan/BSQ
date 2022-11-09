@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 08:51:48 by ernesmar          #+#    #+#             */
-/*   Updated: 2022/11/09 10:13:08 by ernesmar         ###   ########.fr       */
+/*   Updated: 2022/11/09 10:55:01 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	main(int argc, char **argv)
 	{
 		map = create_map_from_file(*(argv + 1), &caption, &flag_error);
 		print_map(map, caption, ' ');
-		if(flag_error >= 1)
+		if (flag_error >= 1)
 			ft_putstr("map error\n");
 		else if (map != NULL)
 		{
