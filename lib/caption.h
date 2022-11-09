@@ -6,22 +6,29 @@
 /*   By: antgalan <antgalan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 12:27:49 by ernesmar          #+#    #+#             */
-/*   Updated: 2022/11/08 21:25:13 by antgalan         ###   ########.fr       */
+/*   Updated: 2022/11/09 01:48:16 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CAPTION_H
 # define CAPTION_H
 
-/*
- * @brew to save parameters of the origin file
+/**
+ * @brief	Contains information about a map.
+ * @cite	It's found in the first line of the map file.
+ * 
+ * @param rows      Number of rows in the map.
+ * @param cols      Number of columns in the map.
+ * @param empty     Character used to represent empty spaces.
+ * @param obstacle  Character used to represent obstacles.
+ * @param full      Character used to represent solution spaces.
  */
-typedef struct t_caption
+typedef struct s_caption
 {
-	int		num_rows;
-	int		num_columns;
+	int		rows;
+	int		cols;
 	char	empty;
-	char	obstacle;
+	char	obst;
 	char	full;
 }	t_caption;
 
