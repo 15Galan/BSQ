@@ -3,6 +3,8 @@
 .idea
 
 # Recursos
+*.dSYM
+*.gch
 *.out
 *.o
 *.json
@@ -13,3 +15,7 @@ bsq
 .swp
 map*
 test*
+
+# Carpetas
+tests/
+maps/

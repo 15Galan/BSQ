@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   args_processing.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ernesmar <ernesmar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: antgalan <antgalan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 15:20:09 by ernesmar          #+#    #+#             */
-/*   Updated: 2022/11/08 15:21:45 by ernesmar         ###   ########.fr       */
+/*   Updated: 2022/11/09 02:07:53 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ft_is_num(char chr)
 	return (flag);
 }
 
-//no spaces before and after
+// No spaces before and after
 int	ft_atoi(char *str)
 {
 	int	digit;
@@ -60,5 +60,5 @@ int	get_base(int n)
 		total *= 10;
 		exponent++;
 	}
-	return (exponent);
+	return (exponent + 1);
 }
