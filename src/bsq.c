@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 08:51:48 by ernesmar          #+#    #+#             */
-/*   Updated: 2022/11/09 13:46:34 by antgalan         ###   ########.fr       */
+/*   Updated: 2022/11/09 14:02:51 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,16 +39,18 @@ int	main(int argc, char **argv)
 	{
 		flag_error = 0;
 		map = create_map_from_file(*(argv + i), &caption, &flag_error);
-		ft_putstr("Mapa:\n");
 		print_map(map, caption, ' ');
 		if (map != NULL && flag_error == 0)
 		{
 			bsq = find_max_square(map, caption);
-			ft_putstr("Solución:\n");
-			print_solution(map, *bsq, caption, ' ');
+			if (bsq != NULL)
+			{
+				print_solution(map, *bsq, caption, ' ');
+				free_map(map, caption.rows);
+			}
 			free(bsq);
 		}
-		free_map(map, caption.rows);
 		i++;
 	}
+	exit(0);
 }
