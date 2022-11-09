@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 00:42:30 by antgalan          #+#    #+#             */
-/*   Updated: 2022/11/09 02:09:56 by antgalan         ###   ########.fr       */
+/*   Updated: 2022/11/09 02:31:38 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,6 @@ t_square	*init_square(int x, int y);
  * @param sqr 	The square to increment.
  * @param cap 	The map's caption.
  */
-void		grow_square(int **map, t_square *sqr, t_caption max);
+t_square	*grow_square(int **map, t_square *sqr, t_caption max);
 
 #endif
