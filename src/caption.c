@@ -30,9 +30,9 @@ t_caption	fill_caption(char *raw, int *flag_error)
 	displacement = get_base(ft_atoi(raw));
 	new_caption.rows = ft_atoi(raw);
 	new_caption.cols = calculate_rows(raw);
-	new_caption.empty = raw[displacement + 0];
-	new_caption.obst = raw[displacement + 1];
-	new_caption.full = raw[displacement + 2];
+	new_caption.empty = raw[displacement + 1];
+	new_caption.obst = raw[displacement + 2];
+	new_caption.full = raw[displacement + 3];
 	if (raw[displacement + 4] != '\n')
 		*flag_error = 1;
 	else if (ft_is_printable(new_caption.empty) == 0)
