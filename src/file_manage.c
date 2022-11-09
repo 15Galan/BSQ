@@ -6,7 +6,7 @@
 /*   By: ernesmar <ernesmar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 16:23:29 by ernesmar          #+#    #+#             */
-/*   Updated: 2022/11/09 09:28:28 by ernesmar         ###   ########.fr       */
+/*   Updated: 2022/11/09 13:32:13 by ernesmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,16 @@ int	calculate_file_size(char *path)
 	total_size = 0;
 	temp_buffer = (char *)malloc(sizeof(char *) * increase);
 	fd = open(path, O_RDONLY);
-	while (attempt > 0)
+	if(temp_buffer == NULL || fd == -1)
+	{
+		close(fd);
+		return (-1);
+	}
+	while (attempt != 0)
 	{
 		attempt = read(fd, temp_buffer, increase);
-		total_size += increase;
+		if(attempt != 0)
+			total_size += increase;
 	}
 	close(fd);
 	free(temp_buffer);
@@ -43,8 +49,10 @@ char	*read_file(char *path)
 	int		fd;
 	char	*buffer;
 
-	fd = open(path, O_RDONLY);
 	file_size = calculate_file_size(path);
+	if(file_size <= 0)
+		return (NULL);
+	fd = open(path, O_RDONLY);
 	buffer = (char *)malloc(sizeof(char *) * file_size);
 	if (fd == -1 || buffer == NULL)
 	{
